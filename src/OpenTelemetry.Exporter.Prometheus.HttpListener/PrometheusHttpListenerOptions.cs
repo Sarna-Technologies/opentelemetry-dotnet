@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 using OpenTelemetry.Internal;
+using OpenTelemetry.Metrics;
 
 namespace OpenTelemetry.Exporter;
 
@@ -21,6 +22,11 @@ public class PrometheusHttpListenerOptions
     /// Gets or sets a value indicating whether addition of _total suffix for counter metric names is disabled. Default value: <see langword="false"/>.
     /// </summary>
     public bool DisableTotalNameSuffixForCounters { get; set; }
+
+    /// <summary>
+    /// Gets the temporality preference for the metric reader.
+    /// </summary>
+    public MetricReaderTemporalityPreference TemporalityPreference => MetricReaderTemporalityPreference.Cumulative;
 
     /// <summary>
     /// Gets or sets the URI (Uniform Resource Identifier) prefixes to use for the http listener.

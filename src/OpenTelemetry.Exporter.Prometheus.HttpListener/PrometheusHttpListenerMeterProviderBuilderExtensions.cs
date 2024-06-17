@@ -73,7 +73,7 @@ public static class PrometheusHttpListenerMeterProviderBuilderExtensions
 
         var reader = new BaseExportingMetricReader(exporter)
         {
-            TemporalityPreference = MetricReaderTemporalityPreference.Cumulative,
+            TemporalityPreference = options.TemporalityPreference,
         };
 
         try
