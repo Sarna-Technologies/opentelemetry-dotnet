@@ -2,6 +2,7 @@ OpenTelemetry.Exporter.PrometheusHttpListenerOptions
 OpenTelemetry.Exporter.PrometheusHttpListenerOptions.DisableTotalNameSuffixForCounters.get -> bool
 OpenTelemetry.Exporter.PrometheusHttpListenerOptions.DisableTotalNameSuffixForCounters.set -> void
 OpenTelemetry.Exporter.PrometheusHttpListenerOptions.TemporalityPreference.get -> OpenTelemetry.Metrics.MetricReaderTemporalityPreference
+OpenTelemetry.Exporter.PrometheusHttpListenerOptions.TemporalityPreference.set -> void
 OpenTelemetry.Exporter.PrometheusHttpListenerOptions.UriPrefixes.get -> System.Collections.Generic.IReadOnlyCollection<string>
 OpenTelemetry.Exporter.PrometheusHttpListenerOptions.UriPrefixes.set -> void
 OpenTelemetry.Exporter.PrometheusHttpListenerOptions.PrometheusHttpListenerOptions() -> void

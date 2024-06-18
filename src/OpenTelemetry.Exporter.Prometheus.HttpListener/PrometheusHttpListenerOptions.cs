@@ -12,6 +12,7 @@ namespace OpenTelemetry.Exporter;
 public class PrometheusHttpListenerOptions
 {
     private IReadOnlyCollection<string> uriPrefixes = new[] { "http://localhost:9464/" };
+    private MetricReaderTemporalityPreference temporalityPreference = MetricReaderTemporalityPreference.Cumulative;
 
     /// <summary>
     /// Gets or sets the path to use for the scraping endpoint. Default value: "/metrics".
@@ -24,9 +25,17 @@ public class PrometheusHttpListenerOptions
     public bool DisableTotalNameSuffixForCounters { get; set; }
 
     /// <summary>
-    /// Gets the temporality preference for the metric reader.
+    /// Gets or sets the temporality preference for the metric reader.
     /// </summary>
-    public MetricReaderTemporalityPreference TemporalityPreference => MetricReaderTemporalityPreference.Cumulative;
+    public MetricReaderTemporalityPreference TemporalityPreference
+    {
+        get => this.temporalityPreference;
+        set
+        {
+            Guard.ThrowIfNull(value);
+            this.temporalityPreference = value;
+        }
+    }
 
     /// <summary>
     /// Gets or sets the URI (Uniform Resource Identifier) prefixes to use for the http listener.
